@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>营业日报</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=720,user-scalable=0,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="styles/style.css?ver=1445999102808" />
+</head>
+<body>
+    <div class="daily-business">
+        <div id="J_sidebar" data-title="营业日报"></div>
+        <div class="px_date_wrap">
+            <ul class="px_date_labels">
+                <li class="px_date_item date_select_item" type="date" unit="1">日</li>
+                <li class="px_date_item" type="week" unit="2">周</li>
+                <li class="px_date_item" type="month" unit="3">月</li>
+                <li class="px_date_item" type="year" unit="4">年</li>
+            </ul>
+            <div class="px_date">
+                <i class="icon-left px_date_left"></i>
+                <p class="px_date_input_p"><input type="text" class="px_date_input"  value="" /></p>
+                <i class="icon-right px_date_right"></i>
+            </div>
+        </div>
+        <div class="business-data">
+            <div class="business-report comm-padding">
+                <ul class="dailbusi-summary">
+                    <li class="summary-item">
+                        <div class="avg-cost valgin">
+                            <div class="summary-wrap">
+                                <p class="avg-title">日最高值</p>
+                                <p id="js_maxmoney" class="avg-money"></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="summary-item">
+                        <div class="avg-cost valgin">
+                            <div class="summary-wrap">
+                                <p class="avg-title">日平均值</p>
+                                <p id="js_avgmoney" class="avg-money"></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="rec_data_tip">
+                <span class="unit-hint">单位：￥</span>
+                <i class="rec_rel_tip rec_tip"></i><span>实收金额</span><i class="rec_all_tip rec_tip"></i><span>应收金额</span></div>
+                <canvas id="js_cure_report" style="height:400px;width:100%;"></canvas>
+            </div>
+            <div class="business-statistic">
+                <p class="statistic-itemtitle">综合统计</p>
+                <ul class="statistic-ul">
+                    <li class="statistic-item">
+                        <div class="menu-item valgin">
+                            <div class="menucontent-wrap">
+                                <p class="menu-name">应收合计</p>
+                                <p class="menu-attach"><span class="unit">￥</span><span class="numbers">0.00</span></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="statistic-item">
+                        <div class="menu-item valgin">
+                            <div class="menucontent-wrap">
+                                <p class="menu-name">实收合计</p>
+                                <p class="menu-attach"><span class="unit">￥</span><span class="numbers">0.00</span></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="statistic-item">
+                        <div class="menu-item valgin">
+                            <div class="menucontent-wrap">
+                                <p class="menu-name">挂账合计</p>
+                                <p class="menu-attach"><span class="unit">￥</span><span class="numbers">0.00</span></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="statistic-item">
+                        <div class="menu-item valgin">
+                            <div class="menucontent-wrap">
+                                <p class="menu-name">免单合计</p>
+                                <p class="menu-attach"><span class="unit">￥</span><span class="numbers">0.00</span></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="no-datas valgin"><p class="greet-msg">当前时间没有营业数据</p></div>
+    </div>
+    <script type="text/javascript">var require = {urlArgs : '1445999102808'};</script>
+    <script type="text/javascript" src="js/libs/require-min.js" data-main="js/dailybusi"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>异常监控</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=720,user-scalable=0,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="styles/style.css?ver=1445999102808" />
+</head>
+<body>
+	<div class="abnormal-container">
+		<div id="J_sidebar" data-title="异常监控"></div>
+		<div class="px_date_wrap">
+            <ul class="px_date_labels">
+                <li class="px_date_item date_select_item" type="date" unit="1">日</li>
+                <li class="px_date_item" type="week" unit="2">周</li>
+                <li class="px_date_item" type="month" unit="3">月</li>
+                <li class="px_date_item" type="year" unit="4">年</li>
+            </ul>
+            <div class="px_date">
+                <i class="icon-left px_date_left"></i>
+                <p class="px_date_input_p"><input type="text" class="px_date_input"  value="" /></p>
+                <i class="icon-right px_date_right"></i>
+            </div>
+        </div>
+        <div class="data-container">
+			<!-- canvas -->
+			<div class="data-report">
+				<canvas id="abnormal-data-bar" style="width:680px;height:400px;"></canvas>
+				<p class="abnormal_tips">没有异常数据</p>
+			</div>
+            
+			<!-- /canvas -->
+			<!-- data -->
+			<div class="data-cost">
+				<div class="rec-cost rec-data">
+			      	<p class="rec-title">应收合计</p>
+			      	<p>
+			      		<span class="rec-mon" id="js_excepte_needMoney"></span>
+			      	</p>
+		    	</div>
+		    	<div class="rec-all rec-data">
+		      		<p class="rec-title">实收合计</p>
+		      		<p>
+		      			<span class="rec-mon" id="js_excpte_reciveMoney"></span>
+		      		</p>
+		   		 </div>
+		   </div>
+			<ul class="control-list" id="j-abn-list" style="display: block;">
+			<li class="control-list-1 menu-item valgin" type="打折">
+					<div class="list-touch"></div>
+					<div class="menucontent-wrap">
+						<p class="list-title menu-name">打折</p>
+						<p class="menu-attach"><span class="list-num">0</span><span class="list-unit"></span></p>
+						<i class="icon-goarrow-icon"></i>
+					</div>
+				</li><li class="control-list-1 menu-item valgin" type="挂账">
+					<div class="list-touch"></div>
+					<div class="menucontent-wrap">
+						<p class="list-title menu-name">挂账</p>
+						<p class="menu-attach"><span class="list-num">0</span><span class="list-unit"></span></p>
+						<i class="icon-goarrow-icon"></i>
+					</div>
+				</li><li class="control-list-1 menu-item valgin" type="免单">
+					<div class="list-touch"></div>
+					<div class="menucontent-wrap">
+						<p class="list-title menu-name">免单</p>
+						<p class="menu-attach"><span class="list-num">0</span><span class="list-unit"></span></p>
+						<i class="icon-goarrow-icon"></i>
+					</div>
+				</li><li class="control-list-1 menu-item valgin" type="反结">
+					<div class="list-touch"></div>
+					<div class="menucontent-wrap">
+						<p class="list-title menu-name">反结</p>
+						<p class="menu-attach"><span class="list-num">0</span><span class="list-unit"></span></p>
+						<i class="icon-goarrow-icon"></i>
+					</div>
+				</li><li class="control-list-1 menu-item valgin" type="赠送">
+					<div class="list-touch"></div>
+					<div class="menucontent-wrap">
+						<p class="list-title menu-name">赠送</p>
+						<p class="menu-attach"><span class="list-num">0</span><span class="list-unit"></span></p>
+						<i class="icon-goarrow-icon"></i>
+					</div>
+				</li><li class="control-list-1 menu-item valgin" type="抹零">
+					<div class="list-touch"></div>
+					<div class="menucontent-wrap">
+						<p class="list-title menu-name">抹零</p>
+						<p class="menu-attach"><span class="list-num">0</span><span class="list-unit"></span></p>
+						<i class="icon-goarrow-icon"></i>
+					</div>
+				</li><li class="control-list-1 menu-item valgin" type="退菜">
+					<div class="list-touch"></div>
+					<div class="menucontent-wrap">
+						<p class="list-title menu-name">退菜</p>
+						<p class="menu-attach"><span class="list-num">0</span><span class="list-unit"></span></p>
+						<i class="icon-goarrow-icon"></i>
+					</div>
+				</li></ul>
+		</div>
+		<!-- /data list -->
+	</div>
+
+</body>
+
+<script type="text/javascript">var require = {urlArgs : '1445999102808'};</script>
+<script type="text/javascript" src="js/libs/require-min.js" data-main="js/abnormalsum"></script>
+</html>

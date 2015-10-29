@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>付款构成</title>
+    <meta name="viewport" content="width=720,user-scalable=0,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="styles/style.css?ver=1445999102808" />
+</head>
+<body>
+    <div class="pay-constitue">
+        <div id="J_sidebar" data-title="付款构成"></div>
+        <div class="px_date_wrap">
+            <ul class="px_date_labels">
+                <li class="px_date_item date_select_item" type="date" unit="1">日</li>
+                <li class="px_date_item" type="week" unit="2">周</li>
+                <li class="px_date_item" type="month" unit="3">月</li>
+                <li class="px_date_item" type="year" unit="4">年</li>
+            </ul>
+            <div class="px_date">
+                <i class="icon-left px_date_left"></i>
+                <p class="px_date_input_p"><input type="text" class="px_date_input"  value="" /></p>
+                <i class="icon-right px_date_right"></i>
+            </div>
+        </div>
+        <div class="no-datas valgin"><p class="greet-msg">亲~你的店还没有开业! 赶快开业赚钱吧</p></div>
+        <div class="report-wrap">
+            <p class="unit-hint">单位：￥</p>
+            <canvas class="canvas-report" id="js_payconstitue_report"></canvas>
+        </div>
+        <div class="payconstitue-summary">
+            <ul class="pay-summary-ul">
+                <li class="summary-item">
+                    <div class="avg-cost valgin">
+                        <div class="summary-wrap">
+                            <p class="avg-title">应收合计</p>
+                            <p id="js_needmoney" class="avg-money"></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="summary-item">
+                    <div class="avg-cost valgin">
+                        <div class="summary-wrap">
+                            <p class="avg-title">实收合计</p>
+                            <p id="js_recivedmoney" class="avg-money"></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <p class="pay-title">付款构成</p>
+            <ul class="paytype-summary-ul">
+                <li class="paytype-item">
+                    <div class="paytype-wrap">
+                        <label class="paytype-name"></label>
+                        <label class="paytype-money"></label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="payconstitue-detail">
+            <p class="pay-detail-title pay-title"></p>
+            <ul class="pay-detail-ul">
+                <li class="pay-detail-item">
+                    <div class="pay-detail-wrap">
+                        <label class="paytype-detail-name"></label>
+                        <label class="paytype-detail-money"></label>
+                        <label class="paytype-detail-percent"></label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">var require = {urlArgs : '1445999102808'};</script>
+    <script type="text/javascript" src="js/libs/require-min.js" data-main="js/payConstitue"></script>
+</body>
+</html>

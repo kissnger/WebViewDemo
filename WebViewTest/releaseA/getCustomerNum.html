@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=720,user-scalable=0,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>客流量</title>
+    <link rel="stylesheet" href="styles/style.css?ver=1445999102808" />
+</head>
+<body class="bg-color">
+<div class="bd-container">
+
+    <div id="J_sidebar" data-title="客流量"></div>
+    <div class="px_date_wrap">
+        <ul class="px_date_labels">
+            <li class="px_date_item date_select_item" type="date" unit="1">日</li>
+            <li class="px_date_item" type="week" unit="2">周</li>
+            <li class="px_date_item" type="month" unit="3">月</li>
+            <li class="px_date_item" type="year" unit="4">年</li>
+        </ul>
+        <div class="px_date">
+            <i class="icon-left px_date_left"></i>
+
+            <p class="px_date_input_p"><input type="text" class="px_date_input" value=""/></p>
+            <i class="icon-right px_date_right"></i>
+        </div>
+    </div>
+    <div class="customer-container">
+        <ul class="customer-list">
+            <li class="customer-num-max list-item">
+                <span>日最高值</span>
+
+                <p id="max-sum"></p>
+
+            </li>
+            <li class="customer-num-average list-item">
+                <span>日平均值</span>
+
+                <p id="reg-sum"></p>
+            </li>
+            <li class="customer-num noborder list-item">
+                <span>就餐人数</span>
+
+                <p id="j-all-customer-num"></p>
+            </li>
+        </ul>
+        <div class="customer-num-container">
+            <div class="customer-cost">
+                <div class="customer-data-report">
+                    单位:单数
+                    <canvas id="customer-line" class="pie-chart"></canvas>
+                    <div class="customer-data-tip">
+                        <span class="member member-item">会员</span>
+
+                        <span class="no-member member-item">散客</span>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+            <div>
+                <div class="new-customer-num-box">
+                    <p class="new-add-member">新增会员</p>
+
+                    <p class="new-add-num">
+                        <span class="new-customer-num"></span>
+                        <span>人</span>
+                    </p>
+                </div>
+                <!--  -->
+                <div class="customer-rate">
+                    <div class="customer-data-tip rate-tip">
+                        <span class="member-item member" id="memberCost-rate"></span>
+                        <span class="member-item no-member" id="nomemberCost-rate"></span>
+                    </div>
+                    <div class="customer-rate-report">
+                        <canvas id="customer-rate-pie"></canvas>
+                        <div class="customer-all">
+                            <p>总销售额</p>
+
+                            <p class="customer-all-money">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="no-data">
+            亲~你的店还没有开业! 赶快开业赚钱吧
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">var require = {urlArgs : '1445999102808'};</script>
+<script type="text/javascript" src="js/libs/require-min.js" data-main="js/customerNum"></script>
+</html>

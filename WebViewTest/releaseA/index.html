@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=720,user-scalable=0,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="styles/style.css?ver=1445999102808" />
+</head>
+<body>
+<div class="main-container">
+    <div class="main-restaurant top-nav">
+        <label class="rest-name">加载中...</label><i class="icon-downarrow-icon"></i>
+        <ul class="hide-restList">
+            <li class="hide-restItem"></li>
+        </ul>
+    </div>
+    <!--<div>
+        <canvas id="js_pie" style="height:400px;width:600px;"></canvas>
+    </div>-->
+    <div class="main-summary">
+        <div class="daily-summary">
+            <p class="daily-title">今日营业额(元)</p>
+            <p class="daily-money"></p>
+            <!--<p class="target-complete">目标完成85%</p>-->
+        </div>
+        <div class="avg-cost valgin">
+            <div class="summary-wrap">
+                <p class="avg-title">人均消费</p>
+                <p id="js_percost" class="avg-money"></p>
+            </div>
+        </div>
+        <div class="avg-cost valgin">
+            <div class="summary-wrap">
+                <p class="avg-title">单均消费</p>
+                <p id="js_perorder" class="avg-money"></p>
+            </div>
+        </div>
+    </div>
+    <div class="main-menuwrap">
+        <div class="menu-item valgin" att_type="except">
+            <div class="menucontent-wrap">
+                <i class="icon-except-icon"></i>
+                <p class="menu-name">异常监控</p>
+                <p class="menu-attach menu-except"><span class="menu-num" id="js_freeorder"></span></p>
+                <i class="icon-goarrow-icon"></i>
+            </div>
+        </div>
+        <div class="menu-item valgin" att_type="report">
+            <div class="menucontent-wrap">
+                <i class="icon-report-icon"></i>
+                <p class="menu-name">营业日报</p>
+                <p class="menu-attach"></p>
+                <i class="icon-goarrow-icon"></i>
+            </div>
+        </div>
+        <div class="menu-item valgin" att_type="realTab">
+            <div class="menucontent-wrap">
+                <i class="icon-tabstatus-icons"></i>
+                <p class="menu-name">实时桌态</p>
+                <p class="menu-attach menu-table"><span class="menu-num" id="js_realTable"></span></p>
+                <i class="icon-goarrow-icon"></i>
+            </div>
+        </div>
+        <div class="menu-item valgin" att_type="morningNews">
+            <div class="menucontent-wrap">
+                <i class="icon-morningnews-icon"></i>
+                <p class="menu-name">晨报</p>
+                <p class="menu-attach"></p>
+                <i class="icon-goarrow-icon"></i>
+            </div>
+        </div>
+        <div class="menu-item valgin" att_type="personFlow">
+            <div class="menucontent-wrap">
+                <i class="icon-multpeople-icon"></i>
+                <p class="menu-name">客流量</p>
+                <p class="menu-attach"></p>
+                <i class="icon-goarrow-icon"></i>
+            </div>
+        </div>
+        <div class="menu-item valgin" att_type="payConstitue">
+            <div class="menucontent-wrap">
+                <i class="icon-payconsitue-icon"></i>
+                <p class="menu-name">付款构成</p>
+                <p id="js_payconsitue" class="menu-attach"></p>
+                <i class="icon-goarrow-icon"></i>
+            </div>
+        </div>
+        <div class="menu-item valgin" att_type="starDishes">
+            <div class="menucontent-wrap">
+                <i class="icon-stardish-icon"></i>
+                <p class="menu-name">明星菜品</p>
+                <p id="js_starDish" class="menu-attach"></p>
+                <i class="icon-goarrow-icon"></i>
+            </div>
+        </div>
+        <div class="menu-item valgin" att_type="starWaiter">
+            <div class="menucontent-wrap">
+                <i class="icon-star-icon"></i>
+                <p class="menu-name">明星服务员</p>
+                <p id="js_starWaiter" class="menu-attach"></p>
+                <i class="icon-goarrow-icon"></i>
+            </div>
+        </div>
+    </div>
+    <div class="no-index-data">
+        <p class="hint-message">亲~今天还没开张喔！</p>
+        <p class="hint-message">您可以查看以前的数据</p>
+        <button class="yesterday-btn">查看以前数据</button>
+    </div>
+</div>
+
+<div class="mask"></div>
+<div id="js_legend"></div>
+
+<script type="text/javascript">var require = {urlArgs : '1445999102808'};</script>
+<script type="text/javascript" src="js/libs/require-min.js" data-main="js/main"></script>
+</body>
+</html>

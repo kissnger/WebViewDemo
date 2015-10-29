@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>明星菜品</title>
+    <meta name="viewport" content="width=720,user-scalable=0,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="styles/style.css?ver=1445999102808" />
+</head>
+<body>
+    <div class="star-dishes">
+        <div id="J_sidebar" data-title="明星菜品"></div>
+        <div class="px_date_wrap">
+            <ul class="px_date_labels">
+                <li class="px_date_item date_select_item" type="date" unit="1">日</li>
+                <li class="px_date_item" type="week" unit="2">周</li>
+                <li class="px_date_item" type="month" unit="3">月</li>
+                <li class="px_date_item" type="year" unit="4">年</li>
+            </ul>
+            <div class="px_date">
+                <i class="icon-left px_date_left"></i>
+                <p class="px_date_input_p"><input type="text" class="px_date_input"  value="" /></p>
+                <i class="icon-right px_date_right"></i>
+            </div>
+        </div>
+        <p class="cancel-tip">
+            点击菜品可以取消该菜品排名
+            <i class="icon-close-icon close-btn"></i>
+        </p>
+        <div class="star-dishes-top3">
+            <!-- 明星菜品Top3区域 -->
+            <ul class="star-topdishes-ul">
+            </ul>
+            <i class="icon-dishtoptip-icon remark-tip"></i>
+            <i class="icon-startop3-dish-icon"></i>
+        </div>
+        <div class="dishes-statistic">
+            <ul class="dishes-tab">
+                <li class="dishes-tab-item tab-selected" operateType="category">菜类</li>
+                <li class="dishes-tab-item" operateType="charge">菜品</li>
+                <li class="dishes-tab-item" operateType="numdesc">畅销</li>
+                <li class="dishes-tab-item" operateType="numasc">滞销</li>
+            </ul>
+            <div class="no-datas valgin"><p class="greet-msg">无相应数据</p></div>
+            <div class="chart-wrap">
+                <canvas class="canvas-report" id="js_dishes_report"></canvas>
+                <img src="images/one-pie.png" class="canvas-img">
+                <div id="js-legend" class="chart-legend"></div>
+                <div class="total-hint">
+                    <p class="hint-title"></p>
+                    <p class="hint-count light"></p>
+                </div>
+            </div>
+            <div class="dishes-statis-detail">
+                <ul class="dishes-detail-ul">
+
+                </ul>
+                <div class="loading pullUpIcon" id="js_loadMore"></div>
+            </div>
+        </div>
+        <div class="px-confirm">
+            <p class="confirm-content"></p>
+            <button class="confirm-cancel confirm-button">否</button>
+            <button class="confirm-submit confirm-button">是</button>
+        </div>
+        <div class="mask"></div>
+    </div>
+    <script id="dishTypeTitle"  type="text/html">
+        <li class="dishes-detail-title">
+            <div class="dishes-title-wrap">
+                <p class="dishes-title-item w30">菜类</p>
+                <p class="dishes-title-item w45">销售金额</p>
+                <p class="dishes-title-item w25">金额占比</p>
+            </div>
+        </li>
+    </script>
+    <script id="dishListTitle"  type="text/html">
+        <li class="dishes-detail-title">
+            <div class="dishes-title-wrap">
+                <p class="dishes-title-item w25">菜名</p>
+                <p class="dishes-title-item w30">单价</p>
+                <p class="dishes-title-item w15">销量</p>
+                <p class="dishes-title-item w30">金额</p>
+            </div>
+        </li>
+    </script>
+    <script id="disheTypeList"  type="text/html">
+        {{if dishData.length}}
+        {{each dishData as obj i}}
+        {{if i > 0}}
+        <li class="paytype-item">
+            <div class="paytype-wrap">
+                <label class="dishes-item paytype-name w30">{{obj.name}}</label>
+                <label class="dishes-item light paytype-money w45">￥{{obj.charge | format}}</label>
+                <label class="dishes-item light paytype-detail-percent w25">{{totalMoney > 0 ? ((obj.charge/totalMoney)*100).toFixed(2) : 0}}%</label>
+            </div>
+        </li>
+        {{/if}}
+        {{/each}}
+        {{/if}}
+    </script>
+    <script id="disheList"  type="text/html">
+        {{if dishData.length}}
+        {{each dishData as obj i}}
+        {{if i >0 }}
+        <li class="paytype-item">
+            <div class="paytype-wrap">
+                <label class="dishes-item paytype-name w25">{{obj.name}}</label>
+                <label class="dishes-item light paytype-money w30">￥{{obj.price | format}}</label>
+                <label class="dishes-item light paytype-money w15">{{obj.count}}</label>
+                <label class="dishes-item light paytype-detail-percent w30">￥{{obj.charge | format}}</label>
+            </div>
+        </li>
+        {{/if}}
+        {{/each}}
+        {{/if}}
+    </script>
+    <script id="starTop3Dish" type="text/html">
+        {{if starData.length}}
+        {{each starData as obj i}}
+        {{if i<3}}
+        <li class="start-top-item star-top{{i+1}}" dishId="{{obj.id}}">
+            <div class="dish-top-wrap">
+                <p class="dish-name">{{obj.name}}</p>
+                <p class="dish-price dish-comm">
+                    单价：￥{{obj.price | format}}
+                </p>
+                <p class="dish-nums dish-comm">
+                    数量：{{obj.count}}
+                </p>
+                <p class="dish-money dish-comm">
+                    金额：￥{{obj.charge | format}}
+                </p>
+            </div>
+        </li>
+        {{/if}}
+        {{/each}}
+        {{/if}}
+    </script>
+    <script type="text/javascript">var require = {urlArgs : '1445999102808'};</script>
+    <script type="text/javascript" src="js/libs/require-min.js" data-main="js/starDishes"></script>
+</body>
+
+</html>

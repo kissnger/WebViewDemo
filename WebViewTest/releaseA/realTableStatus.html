@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>实时桌态</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=720,user-scalable=0,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="styles/style.css?ver=1445999102808" />
+</head>
+<body>
+    <div class="realtable-state">
+        <div id="J_sidebar" data-title="实时桌态"></div>
+        <div class="realtable-summary">
+            <ul>
+                <li class="summary-item">
+                    <div class="menu-item valgin">
+                        <div class="menucontent-wrap">
+                            <p class="menu-name">餐台总数</p>
+                            <p class="menu-attach"><span class="unit"></span><span class="numbers" id="js_totaltabnum"></span></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="summary-item">
+                    <div class="menu-item valgin">
+                        <div class="menucontent-wrap">
+                            <p class="menu-name">应收金额</p>
+                            <p class="menu-attach"><span class="unit">￥</span><span class="numbers" id="js_totalmoney"></span></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="summary-item">
+                    <div class="menu-item valgin">
+                        <div class="menucontent-wrap">
+                            <p class="menu-name">开台数</p>
+                            <p class="menu-attach"><span class="unit"></span><span class="numbers" id="js_ontabnum"></span></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="summary-item">
+                    <div class="menu-item valgin">
+                        <div class="menucontent-wrap">
+                            <p class="menu-name">空台数</p>
+                            <p class="menu-attach"><span class="unit"></span><span class="numbers" id="js_emptytabnum"></span></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="summary-item">
+                    <div class="menu-item valgin">
+                        <div class="menucontent-wrap">
+                            <p class="menu-name">上座率</p>
+                            <p class="menu-attach"><span class="unit"></span><span class="numbers" id="js_ontabprecent"></span></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="summary-item">
+                    <div class="menu-item valgin">
+                        <div class="menucontent-wrap">
+                            <p class="menu-name">单桌消费</p>
+                            <p class="menu-attach"><span class="unit">￥</span><span class="numbers" id="js_pertabcost"></span></p>
+                        </div>
+                    </div>
+                </li>
+                <!--<li class="summary-item">
+                    <p class="item-content"><span>上座率</span></p>
+                    <p class="item-content"><span id="js_ontabprecent"></span></p>
+                </li>
+                <li class="summary-item">
+                    <p class="item-content"><span>单桌消费</span></p>
+                    <p class="item-content"><span id="js_pertabcost"></span></p>
+                </li>-->
+            </ul>
+            <div class="bar-wrap">
+                <p class="table-hint">
+                    <span class="open-table">开台数</span>
+                    <span class="empty-table">空台数</span>
+                </p>
+                <div class="bar-item">
+                    <label class="bar-label"></label><div class="left-bar"></div>
+                    <div class="right-bar"></div><label class="bar-desc"></label>
+                </div>
+            </div>
+        </div>
+        <p class="topcost-title">单桌消费额TOP3</p>
+        <ul class="top-cost">
+            <li class="topcost-item"><span class="topnum">TOP1</span><span class="top-restname">暂无</span><span class="top-money"><span class="unit">￥</span>0</span></li>
+            <li class="topcost-item"><span class="topnum">TOP2</span><span class="top-restname">暂无</span><span class="top-money"><span class="unit">￥</span>0</span></li>
+            <li class="topcost-item"><span class="topnum">TOP3</span><span class="top-restname">暂无</span><span class="top-money"><span class="unit">￥</span>0</span></li>
+        </ul>
+    </div>
+    <script type="text/javascript">var require = {urlArgs : '1445999102808'};</script>
+    <script type="text/javascript" src="js/libs/require-min.js" data-main="js/realTable"></script>
+</body>
+</html>

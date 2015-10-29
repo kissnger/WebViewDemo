@@ -1,0 +1,1 @@
+require.config({baseUrl:"js/libs/",urlArgs:"ver=1445999102808",paths:{js:"../js",libs:"./",services:"../services"},shim:{"*":["js/config"],chart:{exports:"Chart"},zepto:{exports:"$"},mobiscroll_002:["zepto"],mobiscroll:["mobiscroll_002"],artTemplate:{exports:"template"}}});

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>明星服务员</title>
+    <meta name="viewport" content="width=720,user-scalable=0,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="styles/style.css?ver=1445999102808" />
+</head>
+<body>
+    <div class="star-waiters">
+        <div id="J_sidebar" data-title="明星服务员"></div>
+        <div class="px_date_wrap">
+            <ul class="px_date_labels">
+                <li class="px_date_item date_select_item" type="date" unit="1">日</li>
+                <li class="px_date_item" type="week" unit="2">周</li>
+                <li class="px_date_item" type="month" unit="3">月</li>
+                <li class="px_date_item" type="year" unit="4">年</li>
+            </ul>
+            <div class="px_date">
+                <i class="icon-left px_date_left"></i>
+                <p class="px_date_input_p"><input type="text" class="px_date_input"  value="" /></p>
+                <i class="icon-right px_date_right"></i>
+            </div>
+        </div>
+        <div class="star-waiters-top3">
+            <!-- 明星服务员Top3区域 -->
+            <ul class="star-topwaiters-ul">
+            </ul>
+            <a href="StarWaiterComment.html"><i class="icon-dishtoptip-icon remark-tip"></i></a>
+            <i class="icon-startop3-dish-icon"></i>
+        </div>
+        <div class="waiters-statistic">
+            <ul class="waiters-tab">
+                <li class="waiters-tab-item tab-selected" operateType="starMoneyWaiters">赚的多</li>
+                <li class="waiters-tab-item" operateType="starTableWaiters">最勤劳</li>
+            </ul>
+            <div class="chart-wrap">
+                <canvas class="canvas-report" id="js_waiters_report"></canvas>
+                <img src="images/one-pie.png" class="canvas-img">
+                <div id="js-legend" class="chart-legend"></div>
+                <div class="total-hint">
+                    <p class="hint-title"></p>
+                    <p class="hint-count light"></p>
+                </div>
+            </div>
+            <div class="waiters-statis-detail">
+                <ul class="waiters-detail-ul">
+                </ul>
+            </div>
+        </div>
+        <div class="no-datas valgin"><p class="greet-msg">无相应数据</p></div>
+    </div>
+    <script id="moneyList"  type="text/html">
+        {{if waiterData.length}}
+        <li class="waiters-detail-title">
+            <div class="waiters-title-wrap">
+                <p class="waiters-title-item w30">员工</p>
+                <p class="waiters-title-item w45">销售金额</p>
+                <p class="waiters-title-item w25">金额占比</p>
+            </div>
+        </li>
+        {{each waiterData as obj i}}
+        <li class="paytype-item">
+            <div class="paytype-wrap">
+                <label class="waiters-item paytype-name w30">{{obj.waiterName}}</label>
+                <label class="waiters-item light paytype-money w45">￥{{obj.consumption | format}}</label>
+                <label class="waiters-item light paytype-detail-percent w25">{{totalMoney > 0 ? ((obj.consumption/totalMoney)*100).toFixed(2) : 0}}%</label>
+            </div>
+        </li>
+        {{/each}}
+        {{/if}}
+    </script>
+    <script id="tableList"  type="text/html">
+        {{if waiterData.length}}
+        <li class="waiters-detail-title">
+            <div class="waiters-title-wrap">
+                <p class="waiters-title-item w33">员工</p>
+                <p class="waiters-title-item w33">服务桌位</p>
+                <p class="waiters-title-item w33">服务占比</p>
+            </div>
+        </li>
+        {{each waiterData as obj i}}
+        <li class="paytype-item">
+            <div class="paytype-wrap">
+                <label class="waiters-item paytype-name w33">{{obj.waiterName}}</label>
+                <label class="waiters-item light paytype-money w33">{{obj.tableNum}}</label>
+                <label class="waiters-item light paytype-detail-percent w33">{{totalTable > 0 ? ((obj.tableNum/totalTable)*100).toFixed(2): 0}}%</label>
+            </div>
+        </li>
+        {{/each}}
+        {{/if}}
+    </script>
+    <script id="starTop3Waiter" type="text/html">
+        {{if starData.length}}
+        {{each starData as obj i}}
+        {{if i<3}}
+        <li class="start-top-item star-top{{i+1}}">
+            <div class="waiter-top-wrap">
+                <p class="waiter-name">{{obj.waiterName}}</p>
+                <p class="waiter-table waiter-comm">
+                    服务桌位：{{obj.tableNum}}
+                </p>
+                <p class="waiter-customer waiter-comm">
+                    服务人数：{{obj.customerNum}}
+                </p>
+                <p class="waiter-money waiter-comm">
+                    总金额：￥{{obj.consumption | format}}
+                </p>
+            </div>
+        </li>
+        {{/if}}
+        {{/each}}
+
+        {{/if}}
+    </script>
+    <script type="text/javascript">var require = {urlArgs : '1445999102808'};</script>
+    <script type="text/javascript" src="js/libs/require-min.js" data-main="js/starWaiters"></script>
+</body>
+
+</html>
